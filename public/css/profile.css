@@ -1,0 +1,14 @@
+.body-navigation{
+    background-color: #F5F5F5;
+}
+.back{
+    background-color: red;
+    width: auto;
+    height: auto;
+    position: absolute;
+}
+.content{
+    background-color: #4869D9;
+    width: 200px;
+    border-radius: 20px;
+}
