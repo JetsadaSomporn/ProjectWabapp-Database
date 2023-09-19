@@ -26,10 +26,11 @@
 <section>
     <header>
         <h2 class="title">
-            {{ __('Profile Information') }}
+            {{ __('Office') }}
         </h2>
         <p class="discription">
-            {{ __("Update your account's profile information and email address.") }}
+            {{ __("Ensure your office name and office location to enchance
+account to post the job.") }}
         </p>
     </header>
     <div class="block">
@@ -42,12 +43,12 @@
             @csrf
             @method('patch')
         
-            <x-input-label for="name" class="text-white" :value="__('Name')"/>
+            <x-input-label for="name" class="text-white" :value="__('Office Name')"/>
             <x-text-input id="name" name="name" type="text" class=" block w-full" style="margin: 10px 5px 10px 5px;" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         
-            <x-input-label for="email" class="text-white" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class=" block w-full" style="margin: 10px 5px 10px 5px;" :value="old('email', $user->email)" required autocomplete="username" />
+            <x-input-label for="OfficeAd" class="text-white" :value="__('Office Address')" />
+            <x-text-input id="OfficeAd" name="OfficeAd" type="email" class=" block w-full" style="margin: 10px 5px 10px 5px;" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
     
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())

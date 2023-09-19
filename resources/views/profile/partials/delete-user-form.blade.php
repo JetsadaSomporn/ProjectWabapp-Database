@@ -1,18 +1,43 @@
-<section class="space-y-6">
+<head>
+   <style>
+    section {
+            display: flex;   
+        }
+        header h2,p{
+            margin: 10px 0px 0px 10px;
+        }
+        .block {
+            display: inline;
+            margin-left: 5px;
+            margin-top: 0px;
+        }
+        .button {
+            justify-content:end;
+        }
+        .title{
+            color:white;
+            font-weight: bold;
+        }
+        .discription{
+            color:white;
+        }
+   </style> 
+</head>
+<section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+        <h2 class="title">
             {{ __('Delete Account') }}
         </h2>
-
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        <p class="discription">
             {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
         </p>
     </header>
-
-    <x-danger-button
+<div class="block">
+    <x-danger-button class="button"
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
     >{{ __('Delete Account') }}</x-danger-button>
+</div>
 
     <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
         <form method="post" action="{{ route('profile.destroy') }}" class="p-6">

@@ -9,6 +9,9 @@
     width: auto;
     justify-items: center;
 }
+.content img:hover{
+    cursor: pointer;
+}
 .content-item{
     background-color: #4869D9;
     padding: 20px;
