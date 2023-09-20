@@ -25,14 +25,6 @@
                 <div class="content-item">
                     @include('profile.partials.update-office-information-form')
                 </div>
-                <!-- two factor -->
-                <div class="content-item">
-                    
-                </div>
-                <!-- Browser Sessions -->
-                <div class="content-item">
-                    
-                </div>
                 <!-- delete user -->
                 <div class="content-item">
                     @include('profile.partials.delete-user-form') 
