@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\{
+    HomeController,
     ProfileController,
     postcRUDController,
     enrollController
@@ -31,8 +32,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('poser/home', [HomeController::class, 'poserHome'])->name('poser.home')->middleware('is_poser');
-Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_poser');
-Route::resource('jobinfo', postcRUDController::class);
-Route::get('createjob', [postcRUDController::class, 'create']);
+});
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::resource('jobinfo', postcRUDController::class);
+    Route::get('enroll', [enrollController::class, 'enroll']);
+    //Test route check how create job
+    Route::get('createjob', [postcRUDController::class, 'create'])->name('create'); //fetch and input worktype
+    Route::post('createjob2', [postcRUDController::class, 'create2'])->name('create2'); // fetch and create question
+    Route::post('store', [postcRUDController::class, 'store'])->name('store'); // insert on to DB
+});
+Route::middleware(['auth', 'user-access:poser'])->group(function () {
+    Route::get('/poser', [HomeController::class, 'poserHome'])->name('poser.home');
+});
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+    Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
+});
+
+require __DIR__.'/auth.php';
