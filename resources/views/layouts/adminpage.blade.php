@@ -15,13 +15,14 @@
     <div class="menu">
         <ul>
             <li>
-                <a href="#" class="active">
+                <a href="{{ route('dashboard') }}" class="active">
                     <span class="material-symbols-outlined">speed</span>
                     Dashboard
                 </a>
             </li>
             <li>
-                <a href="#" class="active">
+                
+                <a href="{{ route('adminUser') }}" class="active">
                     <span class="material-symbols-outlined">person</span>
                     Users
                 </a>
@@ -40,7 +41,7 @@
     </div>
    
     <div class="content">
-        Wellcome To Hell
+      
         @yield('content')
     </div>
 

@@ -43,7 +43,7 @@ body {
     color: #4869D9; 
 }
 .menu ul li a .material-symbols-outlined {
-margin-right: 10px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+margin-right: 10px;
 }
 
 .content {
@@ -55,3 +55,44 @@ margin-right: 10px; /* ระยะห่างระหว่างไอคอ
     border-radius: 10px;
     background-color: #fff;
 }
+
+#delete {
+    background-color: #ff0000; 
+    color: #fff;
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    cursor: pointer;
+   
+}
+
+#edit {
+    background-color: rgb(255, 255, 53);
+    color: #fff; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+.search-bar {
+    width: 100%; 
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #ffffff;
+   
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #eeeeee;
+}
+
+
+
+
+
