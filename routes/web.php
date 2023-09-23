@@ -4,8 +4,10 @@ use App\Http\Controllers\{
     HomeController,
     ProfileController,
     postcRUDController,
-    enrollController
+    enrollController,
+    AdminController
 };
+use App\Http\Controllers\AdminControllerแ;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,5 +50,11 @@ Route::middleware(['auth', 'user-access:poser'])->group(function () {
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
 });
+
+Route::get('/adminUser', [AdminController::class, 'showUsers'])->name('adminUser');
+Route::get('/searchUser', [AdminController::class, 'searchUser'])->name('searchUser');
+
+
+
 
 require __DIR__.'/auth.php';
