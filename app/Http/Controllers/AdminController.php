@@ -25,6 +25,19 @@ public function searchUser(Request $request)
 
     return view('adminUser', compact('users'));
 }
+public function delete($idUser)
+{
+    $user = User::find($idUser);
+    
+    if (!$user) {
+        return redirect()->route('adminUser')->with('error', 'User not found');
+    }
+
+    $user->delete();
+    $users = User::all();
+
+    return view('adminUser', compact('users'));
+}
 
     
 }
