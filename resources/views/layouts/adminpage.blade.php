@@ -73,45 +73,6 @@
 
 </html>
 
-    <div class="block">
-    <div class="menu">
-        <!-- เมนูฝั่งซ้าย -->
-        <ul>
-            <li>
-                <a href="#" class="active">
-                    <span class="material-symbols-outlined">speed</span>
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="#" class="active">
-                    <span class="material-symbols-outlined">person</span>
-                    Users
-                </a>
-            </li>
-            <li><a href="#" class="active">
-                <span class="material-symbols-outlined">list_alt</span>
-                Post
-                </a>
-            </li>
-            <li><a href="#" class="active">
-                <span class="material-symbols-outlined">sell</span>
-                Category
-                </a>
-            </li>
-        </ul>
-    </div>
-   
-    <div class="content">
-
-        @yield('content')
-    </div>
 
 
-        </div>
-    </div>
 
-
-</body>
-
-</html>
