@@ -12,66 +12,6 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <style>
-        body {
-            background-color: #e5f0ff;
-        }
-        .block{
-            display: flex;
-            gap: 20px;
-        }
-        .menu {
-            background-color: #fff; 
-            color: #4869D9; 
-            width: 250px;
-            height: 300px; 
-            padding: 20px;
-            border-radius: 10px;
-            margin-left: 50px;
-            margin-top: 20px;
-        }
-        .menu ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .menu ul li {
-            margin-bottom: 10px;
-        }
-        
-        .menu ul li a {
-            
-            text-decoration: none;
-            color: #4869D9; 
-            font-weight: bold;
-            display: block; 
-            padding: 5px;
-            transition: background-color 0.3s, color 0.3s; 
-            border-radius: 10px;
-        }
-        .menu ul li a:hover {
-            background-color: #4869D9; 
-            color: #fff; 
-        }
-
-       
-        .menu ul li a:not(.active) {
-            color: #4869D9; 
-        }
-        .menu ul li a .material-symbols-outlined {
-    margin-right: 10px; /* ระยะห่างระหว่างไอคอนและข้อความ */
-}
- 
-        .content {
-            display: inline;
-            width: 1000px;
-            padding: 20px;
-            margin-top: 20px;
-            border: 1px solid #fff;
-            border-radius: 10px;
-            background-color: #fff;
-        }
-
-    </style>
 </head>
 <body>
     <div class="min-h-screen ">
@@ -99,7 +39,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1:8000/admin/user" class="active" id="user">
+                        <a href="http://127.0.0.1:8000/adminUser" class="active" id="user">
                             <span class="material-symbols-outlined">person</span>
                             <p>Users</p>
 
@@ -110,9 +50,9 @@
                             <p>Post</p>
                         </a>
                     </li>
-                    <li><a href="http://127.0.0.1:8000/admin/category" class="active" id="category">
+                    <li><a href="http://127.0.0.1:8000/admin/category" class="active" id="tag">
                             <span class="material-symbols-outlined">sell</span>
-                            <p>Category</p>
+                            <p>Tags</p>
 
                         </a>
                     </li>
@@ -164,7 +104,7 @@
     </div>
    
     <div class="content">
-        Wellcome To Hell
+
         @yield('content')
     </div>
 
