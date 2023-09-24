@@ -66,15 +66,6 @@ margin-right: 10px;
    
 }
 
-#edit {
-    background-color: rgb(255, 255, 53);
-    color: #fff; 
-    border: none; 
-    padding: 5px 10px; 
-    border-radius: 5px;
-    cursor: pointer;
-   
-}
 
 .search-bar {
     width: 100%; 
@@ -91,6 +82,12 @@ margin-right: 10px;
     border-radius: 10px;
     background-color: #eeeeee;
 }
+
+.menu ul li a#user {
+    background-color: #4869D9;
+    color: #fff;
+}
+
 
 
 
