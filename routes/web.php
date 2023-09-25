@@ -43,6 +43,6 @@ Route::get('enroll', [enrollController::class, 'enroll']);
 
 });
 
-
+Route::get('/test', [enrollController::class, 'index'])->name('test.index');
 
 require __DIR__ . '/auth.php';
