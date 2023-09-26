@@ -42,7 +42,6 @@
                         <a href="http://127.0.0.1:8000/adminUser" class="active" id="user">
                             <span class="material-symbols-outlined">person</span>
                             <p>Users</p>
-
                         </a>
                     </li>
                     <li><a href="http://127.0.0.1:8000/admin/post" class="active" id="post">
