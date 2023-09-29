@@ -42,7 +42,6 @@
                         <a href="http://127.0.0.1:8000/adminUser" class="active" id="user">
                             <span class="material-symbols-outlined">person</span>
                             <p>Users</p>
-
                         </a>
                     </li>
                     <li><a href="http://127.0.0.1:8000/admin/post" class="active" id="post">
@@ -73,45 +72,6 @@
 
 </html>
 
-    <div class="block">
-    <div class="menu">
-        <!-- เมนูฝั่งซ้าย -->
-        <ul>
-            <li>
-                <a href="#" class="active">
-                    <span class="material-symbols-outlined">speed</span>
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="#" class="active">
-                    <span class="material-symbols-outlined">person</span>
-                    Users
-                </a>
-            </li>
-            <li><a href="#" class="active">
-                <span class="material-symbols-outlined">list_alt</span>
-                Post
-                </a>
-            </li>
-            <li><a href="#" class="active">
-                <span class="material-symbols-outlined">sell</span>
-                Category
-                </a>
-            </li>
-        </ul>
-    </div>
-   
-    <div class="content">
-
-        @yield('content')
-    </div>
 
 
-        </div>
-    </div>
 
-
-</body>
-
-</html>

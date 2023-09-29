@@ -9,18 +9,18 @@ class AdminController extends Controller
 {
     public function showUsers()
 {
-        $user = User::all();
-    
-    return view('adminUser', ['users' => $user]);
-    
+    $users = User::all();
+    return view('adminUser', ['users' => $users]);
 }
+
+    
+
 public function searchUser(Request $request)
 {
     $search = $request->input('search');
-
-    // Perform the search logic here, for example:
     $users = User::where('name', 'like', '%' . $search . '%')
         ->orWhere('email', 'like', '%' . $search . '%')
+        ->orWhere('type', 'like', '%' . $search . '%')
         ->get();
 
     return view('adminUser', compact('users'));
