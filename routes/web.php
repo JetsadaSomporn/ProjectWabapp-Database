@@ -61,11 +61,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
 Route::get('/adminUser', [AdminController::class, 'showUsers'])->name('adminUser');
 Route::get('/searchUser', [AdminController::class, 'searchUser'])->name('searchUser');
-
-Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
-    Route::get('admin/{text}', [HomeController::class, 'admint'])->name('admin.user');
-
-    Route::get('/admin/delete/{idUser}', [AdminController::class,'delete'])->name('delete');
+Route::get('/admin/delete/{idUser}', [AdminController::class,'delete'])->name('delete');
 
 
 require __DIR__.'/auth.php';
