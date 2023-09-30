@@ -16,8 +16,8 @@
             newAnswerSelect.name = "correct_answer[]";
             newAnswerSelect.className = "input-style";
             newAnswerSelect.innerHTML = `
-    <option value="yes">Yes</option>
-    <option value="no">No</option>`;
+    <option value="1">Yes</option>
+    <option value="0">No</option>`;
 
             const newQuestionAnswerContainer = document.createElement("div");
             newQuestionAnswerContainer.className = "question-answer-container";
@@ -76,10 +76,10 @@
                 </div>
             </div>
             <button type="button" id="add-question" onclick="addQuestion()">Add Question</button>
-            <p class="input_distance">Quallification</p>
+            <p class="input_distance">Quallification Setting</p>
             <label for="qualification">
                 <input type="checkbox" name="qualification" id="qualification">
-                Qualification Required
+                <p id="qualification">Filter out and send rejections to applicants who don’t meet all must-have qualifications</p>
             </label>
             <div class="submit-button-wrapper">
                 <input type="submit" value="Post" class="submit-button">

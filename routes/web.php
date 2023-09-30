@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\{
+    HomeController,
     ProfileController,
     postcRUDController,
-    enrollController
+    enrollController,
+    AdminController
 };
+use App\Http\Controllers\AdminControllerแ;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +34,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+
+
+
+require __DIR__ . '/auth.php';
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('poser/home', [HomeController::class, 'poserHome'])->name('poser.home')->middleware('is_poser');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_poser');
 Route::resource('jobinfo', postcRUDController::class);
@@ -40,9 +48,3 @@ Route::post('createjob2', [postcRUDController::class, 'create2'])->name('create2
 
 Route::post('store', [postcRUDController::class, 'store'])->name('store');
 Route::get('enroll', [enrollController::class, 'enroll']);
-
-});
-
-Route::get('/test', [enrollController::class, 'index'])->name('test.index');
-
-require __DIR__ . '/auth.php';
