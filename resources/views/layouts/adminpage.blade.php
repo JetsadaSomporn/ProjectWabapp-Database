@@ -14,19 +14,19 @@
 
 </head>
 <body>
-    <div class="min-h-screen ">
-        <header class="bg-white">
-            <nav class="flex px-10 py-2 border-b-2">
-                <div class="w-full flex flex-wrap items-center justify-between">
-                    <a href="" class="flex-none">
-                        <img class="logo" src="{{ url('../images/logo.png') }}" alt="5" width="150">
-                    </a>
-                    <div class="http://127.0.0.1:8000/admin">
-                        <x-adminnav />
-                    </div>
+    <header class="bg-white">
+        <nav class="flex px-10 py-2 border-b-2">
+            <div class="w-full flex flex-wrap items-center justify-between">
+                <a href="" class="flex-none">
+                    <img class="logo" src="{{ url('../images/logo.png') }}" alt="5" width="150">
+                </a>
+                <div class="http://127.0.0.1:8000/admin">
+                    <x-adminnav />
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
+    
         <div class="block">
             <div class="menu">
 
