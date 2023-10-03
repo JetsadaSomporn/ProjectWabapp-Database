@@ -10,24 +10,29 @@
     <link rel="stylesheet" href="{{ url('../css/navigation.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
+    <link href="http://127.0.0.1:8000/css/adminnav.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 </head>
 <body>
-    <header class="bg-white">
-        <nav class="flex px-10 py-2 border-b-2">
-            <div class="w-full flex flex-wrap items-center justify-between">
-                <a href="" class="flex-none">
-                    <img class="logo" src="{{ url('../images/logo.png') }}" alt="5" width="150">
-                </a>
-                <div class="http://127.0.0.1:8000/admin">
-                    <x-adminnav />
+    <div class="min-h-screen ">
+        <header id="nav" class="bg-white">
+            <nav class="flex px-10 py-2 border-b-2">
+                <div class="w-full flex flex-wrap items-center justify-between">
+                    <a href="" class="flex-none">
+                        <img class="logo" src="{{ url('../images/logo.png') }}" alt="5" width="150">
+                    </a>
+                    <div class="http://127.0.0.1:8000/admin">
+                        <x-adminnav />
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    
+            </nav>
+        </header>
+
         <div class="block">
+
+            <div class="distance">
             <div class="menu">
 
                 <!-- เมนูฝั่งซ้าย -->
@@ -49,14 +54,15 @@
                             <p>Post</p>
                         </a>
                     </li>
-                    <li><a href="http://127.0.0.1:8000/admin/category" class="active" id="tag">
+                    <li><a href="http://127.0.0.1:8000/admin/category" class="active" id="category">
                             <span class="material-symbols-outlined">sell</span>
-                            <p>Tags</p>
+                            <p>Category</p>
 
                         </a>
                     </li>
                 </ul>
             </div>
+        </div>
 
             <div style="width:65%">
                 @yield('content')
