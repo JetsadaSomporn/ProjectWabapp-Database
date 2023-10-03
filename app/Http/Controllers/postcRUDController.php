@@ -47,8 +47,6 @@ class postcRUDController extends Controller
         }
         $jobCategories = tag::all();
 
-
-
         return view('jobinfo.create2', compact('jobCategories'));
     }
     public function store(Request $request)

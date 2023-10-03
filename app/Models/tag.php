@@ -16,10 +16,14 @@ class tag extends Model
     ];
 
     public function Users(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'user_has_tag', 'idTag', 'idUser');
     }
-
     public function Jobinfos(){
         return $this->belongsToMany(JobInfo::class);
     }
+    public function posers()
+{
+    return $this->belongsToMany(Poser::class, 'user_has_tag', 'idTag', 'idUser');
+}
+
 }

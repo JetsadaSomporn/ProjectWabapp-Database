@@ -27,6 +27,8 @@ class User extends Authenticatable
         'password',
         'phonenumber',
         'type',
+        'idUser',
+        'image',
     ];
 
     /**
@@ -49,20 +51,22 @@ class User extends Authenticatable
     ];
 
     public function Posers(){
-        return $this->hasOne(Poser::class);
+        return $this->hasOne(Poser::class,'idUser');
     }
 
     public function favorites() {
         return $this->hasMany(favorite::class);
     }
 
-    public function tags(){
-        return $this->belongsToMany(tag::class);
-    }
+    
+
+
 
     public function responseJobinfos(){
         return $this->hasMany(responseJobInfo::class);
     }
+    
+
 
     protected $primaryKey = 'idUser';
 

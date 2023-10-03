@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\{
     HomeController,
     ProfileController,
@@ -8,6 +7,9 @@ use App\Http\Controllers\{
 };
 use Illuminate\Support\Facades\Route;
 
+use App\Models\User;
+use APp\Models\Poser;
+use Intervention\Image\ImageManagerStatic as Image;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -32,8 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 Route::middleware(['auth', 'user-access:user'])->group(function () {
+//user
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('jobinfo', postcRUDController::class);
     //Test route check how create job
@@ -45,7 +48,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('ansQuestion',[enrollController::class, 'ansQuestion'])->name('ansQuestion'); //this route is for answer question and store data like email tel. resume
     Route::post('summarizeData',[enrollController::class, 'sumarizeData'])->name('summarize');
     Route::post('submit-response', [enrollController::class, 'submitResponse'])->name('submit_summary');//this route is for answer question and store data like email tel. resume
-
+    
 });
 Route::middleware(['auth', 'user-access:poser'])->group(function () {
     Route::get('/poser', [HomeController::class, 'poserHome'])->name('poser.home');
@@ -65,5 +68,13 @@ Route::delete('/admin/category/deleteTag/{idTag}', [HomeController::class, 'dele
 Route::post('/admin/category/storeTag', [HomeController::class, 'storeTag'])->name('admin.category.storeTag');
 
 });
+// Profile
+Route::get('/profiles',[ProfileController::class,'index'])->name('Profile_index');
+Route::post('/profile/update1',[ProfileController::class,'update1'])->name('Profile.update1');
+Route::post('/profile/updateoffice',[ProfileController::class,'updateoffice'])->name('office.update');
+Route::post('/profile/upload', [ProfileController::class,'upload'])->name('profile.upload');
+Route::get('/profile/logout', [ProfileController::class, 'logout'])->name('profile.logout');
+Route::post('/profiles/passwordupdate', [ProfileController::class, 'updatePassword'])->name('password.update');
+Route::post('/profiles/update-categories',[ProfileController::class,'updateCategories'])->name('update.tag');
 
 require __DIR__.'/auth.php';
