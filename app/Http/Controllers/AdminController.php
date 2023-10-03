@@ -16,8 +16,6 @@ class AdminController extends Controller
         $poserIds = User::where('type', 1)->pluck('idUser');
 
         return view('adminUser', compact('users', 'posers', 'userIds', 'poserIds'));
-
-        return view('adminUser', compact('users', 'posers'));
     }
 
     public function searchUser(Request $request)
