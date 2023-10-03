@@ -5,13 +5,23 @@ body {
     display: flex;
     gap: 20px;
 }
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
 .menu {
     background-color: #fff; 
     color: #4869D9; 
     width: 250px;
     height: 300px; 
     padding: 20px;
-    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     margin-left: 50px;
     margin-top: 20px;
 }
@@ -22,9 +32,7 @@ body {
 .menu ul li {
     margin-bottom: 10px;
 }
-
 .menu ul li a {
-    
     text-decoration: none;
     color: #4869D9; 
     font-weight: bold;
@@ -37,15 +45,12 @@ body {
     background-color: #4869D9; 
     color: #fff; 
 }
-
-
 .menu ul li a:not(.active) {
     color: #4869D9; 
 }
 .menu ul li a .material-symbols-outlined {
 margin-right: 10px;
 }
-
 .content {
     display: inline;
     width: 1000px;
@@ -55,7 +60,9 @@ margin-right: 10px;
     border-radius: 10px;
     background-color: #fff;
 }
-
+#table{
+    color: #4869D9; 
+}
 #delete {
     background-color: #ff0000; 
     color: #fff;
@@ -65,8 +72,6 @@ margin-right: 10px;
     cursor: pointer;
    
 }
-
-
 .search-bar {
     width: 100%; 
     padding: 10px;
@@ -74,7 +79,6 @@ margin-right: 10px;
     background-color: #ffffff;
    
 }
-
 .search-bar input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -82,13 +86,23 @@ margin-right: 10px;
     border-radius: 10px;
     background-color: #eeeeee;
 }
-
 .menu ul li a#user {
     background-color: #4869D9;
     color: #fff;
 }
-
-
+.profile-image-container {
+    width: 80px; /* Adjust the width as needed */
+    height: 80px; /* Adjust the height as needed */
+    overflow: hidden;
+    border-radius: 50%; /* Makes the container circular */
+    margin-right: 20px; /* Add some space to the right of the image */
+}
+/* Style profile image */
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
 
 
 

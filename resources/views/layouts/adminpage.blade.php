@@ -58,8 +58,7 @@
                 </ul>
             </div>
 
-            <div class="menu" style="width:65%">
-
+            <div style="width:65%">
                 @yield('content')
             </div>
 
