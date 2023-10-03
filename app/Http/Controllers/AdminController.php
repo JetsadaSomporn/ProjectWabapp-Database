@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Models\{
+    User,Poser,tag,JobInfo
+};
 
 class AdminController extends Controller
 {
@@ -46,5 +48,15 @@ class AdminController extends Controller
         $posers = User::where('type', 1)->get();
 
         return view('adminUser', compact('users', 'posers'));
+    }
+    public function adminHome() {
+        $countuser = User::all()->count();
+        $countpost = poser::all()->count();
+        $counttag = tag::all()->count();
+        return view('adminHome',compact('countuser','countpost','counttag'));
+    }
+    public function admint($text) {
+        $job= JobInfo::all();
+        return view('admin'.$text,compact('text','job'));
     }
 }

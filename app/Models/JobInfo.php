@@ -16,7 +16,7 @@ class JobInfo extends Model
     ];
 
     public function Poser(){
-        return $this->belongsTo(Poser::class);
+        return $this->belongsTo(Poser::class,'idUser');
     }
 
     public function favorites() {

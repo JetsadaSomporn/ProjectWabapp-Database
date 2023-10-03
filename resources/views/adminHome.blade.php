@@ -15,11 +15,14 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
     #container{
         display: flex;
         flex-direction: row;
-        display: flex; 
         justify-content: center;
     }
     div#home h3,div#home p{
@@ -27,29 +30,32 @@
         margin-bottom: 20px;
         text-align: center
     }
-
+    #icon {
+    font-size: 5em;
+    margin-left: 20px;
+}
 </style>
 <div class="container">
 <div id='container' >
 <a href="http://127.0.0.1:8000/adminUser">
     <div id='home'>
-        <img class="logo" src="{{ url('../images/windows_xp_background.jpg') }}">
+        <span id="icon"  class="material-symbols-outlined">person</span><br>
         <h3>{{$countuser}}</h3>
-        <p style="color: #4869D9;">User</p>
+        User
     </div>
 </a>
 <a href="http://127.0.0.1:8000/admin/post">
     <div id='home'>
-        <img class="logo" src="{{ url('../images/windows_xp_background.jpg') }}">
-        <h3>{{$countinfo}}</h3>
-        <p style="color: #4869D9;">Posts</p>
+        <span id="icon"  class="material-symbols-outlined">list_alt</span><br>
+        <h3>{{$countpost}}</h3>
+        Posts
     </div>
 </a>
 <a href="http://127.0.0.1:8000/admin/category">    
     <div id='home'>
-        <img class="logo" src="{{ url('../images/windows_xp_background.jpg') }}">
-        <h3>{{$countpost}}</h3>
-        <p style="color: #4869D9;">Category</p>
+        <span id="icon" class="material-symbols-outlined">sell</span><br>
+        <h3>{{$counttag}}</h3>
+        Category
     </div>
 </a>
 

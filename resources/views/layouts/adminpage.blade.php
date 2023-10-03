@@ -54,7 +54,8 @@
                             <p>Post</p>
                         </a>
                     </li>
-                    <li><a href="http://127.0.0.1:8000/admin/category" class="active" id="category">
+                    <li>
+                        <a href="http://127.0.0.1:8000/admin/category" class="active" id="category">
                             <span class="material-symbols-outlined">sell</span>
                             <p>Category</p>
 
