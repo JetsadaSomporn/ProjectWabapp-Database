@@ -9,6 +9,6 @@ post
 }
 </style>
 <div class="container">
-    Post
+post
 </div>
 @endsection
