@@ -13,6 +13,7 @@
     }
 </script>  
 @section('content')
+<div class="container">
 
 <div class="search-bar">
     <form action="{{ route('searchUser') }}" method="GET">
@@ -21,7 +22,7 @@
 </div>
 
 <table class="table">
-    <h1>User</h1>
+    <h1 id="table">User</h1>
         <thead>
           <tr>
             <th scope="col">Image</th>
@@ -33,7 +34,19 @@
     <tbody>
         @foreach ($users as $user)
         <tr>
-           <td></td>
+           <td>
+            <div class="user-info" style="margin-bottom: 20px;">
+                <div class="profile-image-container">
+                    @if (file_exists(public_path("profile/{$user->idUser}.jpg")))
+            <img src="{{ asset("profile/{$user->idUser}.jpg") }}" alt="No Profile" class="profile-image">
+        @elseif (file_exists(public_path("profile/{$poser->idUser}.png")))
+            <img src="{{ asset("profile/{$user->idUser}.png") }}" alt="No Profile" class="profile-image">
+        @else
+            <img src="{{ asset('profile/no-profile.jpg') }}" alt="No Profile" class="profile-image"> {{-- Use a default image --}}
+        @endif
+                </div>
+            </div>
+           </td>
             <td>{{ $user->name}}</td>
             <td>{{ $user->email}}</td>
             <td>
@@ -51,7 +64,7 @@
 </table>
 
     <table class="table">
-        <h1>Poser</h1>
+        <h1 id="table">Poser</h1>
         <thead>
           <tr>
             <th scope="col">Image</th>
@@ -61,11 +74,23 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($posers as $user)
+            @foreach ($posers as $poser)
             <tr>
-               <td></td>
-               <td>{{ $user->name }}</td>
-               <td>{{ $user->email }}</td>
+                <td>
+                    <div class="user-info" style="margin-bottom: 20px;">
+                        <div class="profile-image-container">
+                        @if (file_exists(public_path("profile/{$poser->idUser}.jpg")))
+                <img src="{{ asset("profile/{$poser->idUser}.jpg") }}" alt="No Profile" class="profile-image">
+            @elseif (file_exists(public_path("profile/{$poser->idUser}.png")))
+                <img src="{{ asset("profile/{$poser->idUser}.png") }}" alt="No Profile" class="profile-image">
+            @else
+                <img src="{{ asset('profile/no-profile.jpg') }}" alt="No Profile" class="profile-image"> {{-- Use a default image --}}
+            @endif
+                    </div>
+                </div>
+                   </td>
+               <td>{{ $poser->name }}</td>
+               <td>{{ $poser->email }}</td>
                 <td>
                     
                     <button id="delete" type="button" class="btn btn-danger">
@@ -79,4 +104,5 @@
             
         </tbody>
     </table>
+</div>
 @endsection

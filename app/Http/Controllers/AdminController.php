@@ -12,8 +12,10 @@ class AdminController extends Controller
     {
         $users = User::where('type', 0)->get(); // Retrieve users with type 0
         $posers = User::where('type', 1)->get(); // Retrieve posers with type 1
+        $userIds = User::where('type', 0)->pluck('idUser');
+        $poserIds = User::where('type', 1)->pluck('idUser');
 
-        return view('adminUser', compact('users', 'posers'));
+        return view('adminUser', compact('users', 'posers', 'userIds', 'poserIds'));
     }
 
     public function searchUser(Request $request)
