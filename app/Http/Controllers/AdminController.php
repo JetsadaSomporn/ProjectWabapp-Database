@@ -16,20 +16,16 @@ class AdminController extends Controller
         $poserIds = User::where('type', 1)->pluck('idUser');
 
         return view('adminUser', compact('users', 'posers', 'userIds', 'poserIds'));
+
+        return view('adminUser', compact('users', 'posers'));
     }
 
     public function searchUser(Request $request)
     {
         $search = $request->input('search');
 
-        $users = User::where('name', 'like', '%' . $search . '%')
-            ->orWhere('email', 'like', '%' . $search . '%')
-            ->orWhere('type', 'like', '%' . $search . '%')
-            ->get();
-        $posers = User::where('name', 'like', '%' . $search . '%')
-            ->orWhere('email', 'like', '%' . $search . '%')
-            ->orWhere('type', 'like', '%' . $search . '%')
-            ->get();
+        $users = User::where('name', 'like', '%' . $search . '%')->where('type',0)->get();
+        $posers = User::where('name', 'like', '%' . $search . '%')->where('type',1)->get();
 
         return view('adminUser', compact('users', 'posers'));
     }

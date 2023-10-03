@@ -9,13 +9,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('../css/navigation.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    
+    <link href="http://127.0.0.1:8000/css/adminnav.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 </head>
 <body>
     <div class="min-h-screen ">
-        <header class="bg-white">
+        <header id="nav" class="bg-white">
             <nav class="flex px-10 py-2 border-b-2">
                 <div class="w-full flex flex-wrap items-center justify-between">
                     <a href="" class="flex-none">

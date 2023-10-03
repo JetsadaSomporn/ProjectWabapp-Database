@@ -1,7 +1,13 @@
 @extends('layouts.adminpage')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
- <link href="http://127.0.0.1:8000/css/adminpage.css" rel="stylesheet">
+ <link href="http://127.0.0.1:8000/css/admin.css" rel="stylesheet">
+ <style>
+    .menu ul li a#user {
+    background-color: #4869D9;
+    color: #fff;
+}
+ </style>
  <script>
     function confirmDelete(idUser) {
         if (confirm("Are you sure you want to delete this?")) {
@@ -39,7 +45,7 @@
                 <div class="profile-image-container">
                     @if (file_exists(public_path("profile/{$user->idUser}.jpg")))
                     <img src="{{ asset("profile/{$user->idUser}.jpg") }}" alt="No Profile" class="profile-image">
-                     @elseif (file_exists(public_path("profile/{$poser->idUser}.png")))
+                     @elseif (file_exists(public_path("profile/{$user->idUser}.png")))
                      <img src="{{ asset("profile/{$user->idUser}.png") }}" alt="No Profile" class="profile-image">
                      @else
                      <img src="{{ asset('profile/no-profile.jpg') }}" alt="No Profile" class="profile-image"> {{-- Use a default image --}}
