@@ -38,28 +38,24 @@
             <div class="user-info" style="margin-bottom: 20px;">
                 <div class="profile-image-container">
                     @if (file_exists(public_path("profile/{$user->idUser}.jpg")))
-            <img src="{{ asset("profile/{$user->idUser}.jpg") }}" alt="No Profile" class="profile-image">
-        @elseif (file_exists(public_path("profile/{$poser->idUser}.png")))
-            <img src="{{ asset("profile/{$user->idUser}.png") }}" alt="No Profile" class="profile-image">
-        @else
-            <img src="{{ asset('profile/no-profile.jpg') }}" alt="No Profile" class="profile-image"> {{-- Use a default image --}}
-        @endif
+                    <img src="{{ asset("profile/{$user->idUser}.jpg") }}" alt="No Profile" class="profile-image">
+                     @elseif (file_exists(public_path("profile/{$poser->idUser}.png")))
+                     <img src="{{ asset("profile/{$user->idUser}.png") }}" alt="No Profile" class="profile-image">
+                     @else
+                     <img src="{{ asset('profile/no-profile.jpg') }}" alt="No Profile" class="profile-image"> {{-- Use a default image --}}
+                     @endif
                 </div>
             </div>
            </td>
             <td>{{ $user->name}}</td>
             <td>{{ $user->email}}</td>
             <td>
-                
                 <button id="delete" type="button" class="btn btn-danger">
                     <a href="{{ route('delete',$user->idUser)}}" onclick="confirmDelete('{{ $user->idUser }}')">Delete</a>
                 </button>
             </td>
-
         </tr>
         @endforeach
-
-        
     </tbody>
 </table>
 
@@ -80,19 +76,18 @@
                     <div class="user-info" style="margin-bottom: 20px;">
                         <div class="profile-image-container">
                         @if (file_exists(public_path("profile/{$poser->idUser}.jpg")))
-                <img src="{{ asset("profile/{$poser->idUser}.jpg") }}" alt="No Profile" class="profile-image">
-            @elseif (file_exists(public_path("profile/{$poser->idUser}.png")))
-                <img src="{{ asset("profile/{$poser->idUser}.png") }}" alt="No Profile" class="profile-image">
-            @else
-                <img src="{{ asset('profile/no-profile.jpg') }}" alt="No Profile" class="profile-image"> {{-- Use a default image --}}
-            @endif
+                        <img src="{{ asset("profile/{$poser->idUser}.jpg") }}" alt="No Profile" class="profile-image">
+                        @elseif (file_exists(public_path("profile/{$poser->idUser}.png")))
+                        <img src="{{ asset("profile/{$poser->idUser}.png") }}" alt="No Profile" class="profile-image">
+                        @else
+                        <img src="{{ asset('profile/no-profile.jpg') }}" alt="No Profile" class="profile-image"> {{-- Use a default image --}}
+                        @endif
+                        </div>
                     </div>
-                </div>
-                   </td>
+                </td>
                <td>{{ $poser->name }}</td>
                <td>{{ $poser->email }}</td>
                 <td>
-                    
                     <button id="delete" type="button" class="btn btn-danger">
                         <a href="{{ route('delete', $user->idUser) }}" onclick="confirmDelete('{{ $user->idUser }}')">Delete</a>
                     </button>
@@ -101,7 +96,6 @@
             </tr>
             @endforeach
 
-            
         </tbody>
     </table>
 </div>
