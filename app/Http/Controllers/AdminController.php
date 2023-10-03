@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\{
-    User,Poser,tag
+    User,Poser,tag,JobInfo
 };
 
 class AdminController extends Controller
@@ -56,6 +56,7 @@ class AdminController extends Controller
         return view('adminHome',compact('countuser','countpost','counttag'));
     }
     public function admint($text) {
-        return view('admin'.$text,compact('text'));
+        $job= JobInfo::all();
+        return view('admin'.$text,compact('text','job'));
     }
 }
