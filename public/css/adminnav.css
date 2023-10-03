@@ -52,5 +52,13 @@ margin-right: 10px;
     margin-left: 270px; /* Adjust the margin to match the menu width */
     padding-top: 80px; /* Ensure content appears below the fixed header and menu */
 }
-
+.distance{
+    height: 20px;
+}
+.distance_top{
+    height: 20px;
+}
+.distance_bottom{
+    height: 20px;
+}
 

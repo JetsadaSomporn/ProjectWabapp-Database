@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('../css/navigation.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    
+
     <link href="http://127.0.0.1:8000/css/adminnav.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -29,7 +29,10 @@
                 </div>
             </nav>
         </header>
+
         <div class="block">
+
+            <div class="distance">
             <div class="menu">
 
                 <!-- เมนูฝั่งซ้าย -->
@@ -51,14 +54,15 @@
                             <p>Post</p>
                         </a>
                     </li>
-                    <li><a href="http://127.0.0.1:8000/admin/category" class="active" id="tag">
+                    <li><a href="http://127.0.0.1:8000/admin/category" class="active" id="category">
                             <span class="material-symbols-outlined">sell</span>
-                            <p>Tags</p>
+                            <p>Category</p>
 
                         </a>
                     </li>
                 </ul>
             </div>
+        </div>
 
             <div style="width:65%">
                 @yield('content')

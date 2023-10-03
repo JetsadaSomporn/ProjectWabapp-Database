@@ -18,7 +18,9 @@
         }
     }
 </script>  
+
 @section('content')
+
 <div class="container">
 
 <div class="search-bar">
@@ -95,7 +97,7 @@
                <td>{{ $poser->email }}</td>
                 <td>
                     <button id="delete" type="button" class="btn btn-danger">
-                        <a href="{{ route('delete', $user->idUser) }}" onclick="confirmDelete('{{ $user->idUser }}')">Delete</a>
+                        <a href="{{ route('delete', $poser->idUser) }}" onclick="confirmDelete('{{ $user->idUser }}')">Delete</a>
                     </button>
                 </td>
 
