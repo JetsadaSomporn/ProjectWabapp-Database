@@ -54,14 +54,15 @@ Route::middleware(['auth', 'user-access:poser'])->group(function () {
     Route::get('/poser', [HomeController::class, 'poserHome'])->name('poser.home');
 });
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-    Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
-    Route::get('admin/{text}', [HomeController::class, 'admint'])->name('admin.user');
+    
 
 });
 
 Route::get('/adminUser', [AdminController::class, 'showUsers'])->name('adminUser');
 Route::get('/searchUser', [AdminController::class, 'searchUser'])->name('searchUser');
 Route::get('/admin/delete/{idUser}', [AdminController::class,'delete'])->name('delete');
+Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home');
+Route::get('admin/{text}', [HomeController::class, 'admint'])->name('adminUser');
 
 
 require __DIR__.'/auth.php';
